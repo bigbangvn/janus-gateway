@@ -79,6 +79,9 @@ $(document).ready(function() {
 			janus = new Janus(
 				{
 					server: server,
+					iceServers:[{url: 'stun:stun.l.google.com:19302'},
+								{url: 'turn:graphtable.com:13478?transport=tcp', credential:'test', username:'test'},
+								{url: 'turn:graphtable.com:13478?transport=udp', credential:'test', username:'test'}],
 					success: function() {
 						// Attach to video room test plugin
 						janus.attach(
