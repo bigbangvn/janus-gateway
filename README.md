@@ -409,3 +409,20 @@ changed any transport-related configuration from its defaults.
 Any thought, feedback or (hopefully not!) insult is welcome!
 
 Developed by [@meetecho](https://github.com/meetecho)
+
+## BangNT note: (I'm using CentOS 7.4)
++ For stable, you may need check 'git tag' (for now it's v0.3.0)
+
++ To use stream recording and convert recorded .mjr file. Enable post processing tool:
+./configure --prefix=/opt/janus --enable-post-processing
+But It needs dependencies:
+						(
+                           glib-2.0 >= 2.34
+                           jansson >= 2.5
+                           libavutil
+                           libavcodec
+                           libavformat
+                           ogg
+                         )
+It's not hard to install them on CentOS 7.4
+I added script for converting .mjr file to webm in ./BangNT/postprocessing-recorded.sh
